@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.test{
+    @apply border-4 border-l-pink-100 
+}
