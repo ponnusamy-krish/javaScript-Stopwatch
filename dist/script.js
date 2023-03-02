@@ -2,50 +2,46 @@ var hr = document.querySelector("#hr");
 let min = document.querySelector("#min");
 let sec = document.querySelector("#sec");
 
-let startBtn = document.querySelector("#startBtn");
+let startBtn = document.getElementById("startBtn");
 let stopBtn = document.getElementById("stopBtn");
 let resetBtn = document.getElementById("resetBtn");
 
-let secTimer, minTimer, hrTimer;
+let seconds,init;
 
-startBtn.addEventListener("click", () => {
-  secTimer = setInterval(secFunc, 1000);
-  minTimer = setInterval(minFunc, 60000);
-  hrTimer = setInterval(hrFunc, 3600000);
-});
+startBtn.addEventListener("click", ()=>{
+  
+init = setInterval(inc, 1000)
 
-resetBtn.addEventListener("click", () => {
-  hr.textContent = "00";
-  min.textContent = "00";
-  sec.textContent = "00";
-  clearInterval(secTimer);
-  clearInterval(minTimer);
-  clearInterval(hrTimer);
-});
+})
 
-function secFunc() {
-  if (sec.textContent >= 60) {
-    sec.textContent = "00";
+stopBtn.addEventListener("click", ()=>{
+  clearInterval(init)
+})
+
+resetBtn.addEventListener("click", ()=>{
+clearInterval(init)
+sec.innerHTML ="00"
+min.innerHTML = "00"
+hr.innerHTML ="00"
+
+})
+function inc(){
+  sec.innerHTML++
+  if(sec.innerHTML == 60){
+    sec.innerHTML = 00;
+    min.innerHTML++
   }
-  sec.textContent++;
+
+if(min.innerHtml == 60){
+  min.innerHTML = 00;
+  hr.innerHTML ++;
+}
+if(hr.innerHTML == 3){
+  sec.innerHTML ="00"
+  min.innerHTML = "00"
+  hr.innerHTML ="00"
+
 }
 
-function minFunc() {
-  if (min.textContent >= 60) {
-    min.textContent = "00";
-  }
-  min.textContent++;
-}
 
-function hrFunc() {
-  if (hr.textContent >= 2) {
-    hr.textContent == "00";
-  }
-  hr.textContent++;
 }
-
-stopBtn.addEventListener("click", () => {
-  clearInterval(secTimer);
-  clearInterval(hrTimer);
-  clearInterval(minTimer);
-});
