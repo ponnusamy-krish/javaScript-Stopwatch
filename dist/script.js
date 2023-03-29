@@ -28,12 +28,12 @@ hr.innerHTML ="00"
 function inc(){
   sec.innerHTML++
   if(sec.innerHTML == 60){
-    sec.innerHTML = 00;
+    sec.innerHTML = 0;
     min.innerHTML++
   }
 
 if(min.innerHtml == 60){
-  min.innerHTML = 00;
+  min.innerHTML = 0;
   hr.innerHTML ++;
 }
 if(hr.innerHTML == 3){
@@ -45,3 +45,4 @@ if(hr.innerHTML == 3){
 
 
 }
+// checking git commands
