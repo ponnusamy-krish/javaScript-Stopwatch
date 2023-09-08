@@ -9,7 +9,7 @@ let resetBtn = document.getElementById("resetBtn");
 let seconds,init;
 
 startBtn.addEventListener("click", ()=>{
-  
+  clearInterval(init)
 init = setInterval(inc, 1000)
 
 })
