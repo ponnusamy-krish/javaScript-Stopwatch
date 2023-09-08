@@ -22,6 +22,7 @@ transform: scale(1.1);
   /* 2 */
   border-color: #e5e7eb;
   /* 2 */
+transition: all 0.2s ease;
 }
 
 ::before,
@@ -64,6 +65,7 @@ body {
   line-height: inherit;
   /* 2 */
  -webkit-tap-highlight-color:transparent;
+transition: all 0.2s ease;
 }
 
 /*
